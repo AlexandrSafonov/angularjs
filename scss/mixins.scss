@@ -1,0 +1,27 @@
+@mixin linear-gradiend($direction, $list-color){
+    background-image: -webkit-linear-gradient($direction, $list-color);
+    background: linear-gradient(to $direction, $list-color);
+    $list-color-first: nth($list-color,1);
+    $list-color-last: nth($list-color,-1);
+    @if $direction == 'top' or $direction == 'bottom' {
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= '#{nth($list-color,1)}' , 
+            endColorstr='#{nth($list-color,-1)}',GradientType=0);
+    }
+    @if $direction == 'left' or $direction == 'right' {
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= '#{nth($list-color,1)}' , 
+            endColorstr='#{nth($list-color,-1)}',GradientType=1);
+    }
+} 
+
+@mixin clear {
+    &:before {
+        content: " ";
+        display: block;
+        clear: both;
+    }
+    &:after {
+        content: " ";
+        display: block;
+        clear: both;
+    }
+}

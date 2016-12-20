@@ -1,0 +1,227 @@
+$fontSize: 14px;
+$lineHeight: 20px;
+$mainColor1: #000;
+$mainColor2: #4D9ECE;
+$logoWidht: 300px;
+$logoHeight: 60px;
+
+@import "reset.scss";
+@import "wp-style.scss";
+@import "../lib/fontAwesome/font-awesome.scss"; 
+@import "mixins.scss";
+
+
+body { 
+    // All class 
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    color: $mainColor1;
+    .w1 {
+        position: relative;
+    }
+    .wrapper {
+        margin: 0 auto;
+        width: 1150px;
+    }
+    p {
+        margin: 0;
+    }
+    // Header 
+    header {
+        position: relative;
+        z-index: 10000;
+    }
+    .header { 
+        .logo-nav-wrap {
+            padding-left: $logoWidht + 10;
+        }
+        .logo {
+            width: $logoWidht;
+            display: inline-block;
+            vertical-align: middle;
+            padding: 30px 0;
+            font-size: 14px;
+            margin: 0 0 0 ($logoWidht + 10) * -1;
+            h1 {
+                a {
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    display: block;
+                    width: 100%; 
+                    height: $logoHeight;
+                    text-indent: -9999px;
+                }
+            }
+        }
+        .nav { 
+            width: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: right;
+            .toggleMenu {
+                display: none;
+                font-size: 30px;
+                transition: color 0.5s;
+                cursor: pointer;
+                color: $mainColor1;
+                &:hover {
+                    color: $mainColor2;
+                }
+            }
+            nav {
+                ul {
+                    padding: 0;
+                    list-style: none;
+                    li { 
+                        display: inline-block;
+                        position: relative;
+                        vertical-align: top;
+                        padding: 0 12px;
+                        &:hover {
+                            > .dropdown {
+                                left: 50%;
+                                opacity: 1;
+                                margin: 0 0 0 -120px;
+                            }
+                            > a {
+                                color: #f00;
+                                border-bottom: 1px solid #f00;
+                            }
+                        }
+
+                        a {
+                            display: block;
+                            line-height: 20px;
+                            padding: 10px 0 9px;
+                            border-bottom: 1px solid transparent;
+                            i {
+                                display: none;
+                                position: absolute;
+                                right: 0;
+                                width: 40px;
+                                line-height: 38px;
+                                top: 0;
+                                font-size: 18px;
+                                height: 40px;
+                            }
+                        }
+                        &.parent {
+                            a {
+                                border: none;
+                            }
+                        }
+                        .dropdown {
+                            position: absolute;
+                            width: 240px;
+                            left: -9999px;
+                            opacity: 0;
+                            transition: opacity 0.5s;
+                            border-top: 2px solid $mainColor2;
+                            ul {
+                                background-color: #fff;
+                                box-shadow: 0 0 30px rgba(0,0,0,0.15);
+                                li {
+                                    width: 100%;
+                                    float: none;
+                                    border-bottom: 1px solid #e6e6e6;
+                                    text-align: left;
+                                    &:last-child {
+                                        border: none;
+                                    }
+                                    &:hover {
+                                        > .dropdown {
+                                            left: -100%;
+                                            opacity: 1;
+                                            margin: 0 0 0;
+                                        }
+                                    }
+                                    a {
+                                        padding: 20px;
+                                        border: none;
+                                    }
+                                    .dropdown {
+                                        left: -9999px;
+                                        top: 0;
+                                        border-top: none;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        } 
+    }
+    // Main 
+    main {
+        p {
+            margin: 0 0 30px;
+        } 
+        img {
+            max-width: 100%;
+        }
+        form {
+            margin: 0 0 30px;
+        }
+        .grid-five-col {
+            @include clear;
+            .wrapper {
+                @include clear;
+            }
+            .f-col {
+                float: left;
+                width: 18.5%;
+                margin: 0 1.875% 30px 0;
+                &:nth-child(5n+5) {
+                    margin: 0 0 30px;
+                }
+                &:nth-child(5n+1) {
+                    clear: left;
+                }
+            }
+        }
+        .pagination {
+            font-size: 0;
+            text-align: center;
+            li {
+                display: inline-block;
+                vertical-align: top;
+                margin: 10px;
+                font-size: $fontSize;
+                a {
+                    padding: 5px 10px;
+                }
+                &.active {
+                    a {
+                        color: #f00;
+                    }
+                }
+            }
+        }
+    }
+    // Footer
+    footer {
+        $padding: 30px;
+        .footer {
+            background-color: #4D9ECE;
+            .copy {
+                float: left;
+                padding: $padding 0;
+            }
+            nav { 
+                float: right; 
+                ul {
+                    padding: $padding / 2 0;
+                    li {
+                        display: inline-block;
+                        vertical-align: top;
+                        padding: $padding / 2 0 $padding / 2 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+@import "media.scss"; 

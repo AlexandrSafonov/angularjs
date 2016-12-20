@@ -1,0 +1,145 @@
+@media screen and (max-width: 1350px) {
+    body {
+        // Header 
+        .header { 
+            .nav { 
+                nav {
+                    > ul {
+                        > li { 
+                            &:last-child {
+                                &:hover {
+                                    > .dropdown {
+                                        left: 100%;
+                                        opacity: 1;
+                                        margin: 0 0 0 -240px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+    }
+} 
+@media screen and (max-width: 1150px) {
+    body {
+        .wrapper {
+            width: 100%;
+            padding: 0 5%;
+        }
+    }
+} 
+@media screen and (max-width: 991px) {
+    $logoWidht: 280px;
+    body {
+        .wrapper {
+            width: 100%;
+        }
+        .header {
+            .logo-nav-wrap {
+                padding-left: $logoWidht + 10;
+            }
+            .logo {
+                width: $logoWidht;
+                margin: 0 0 0 ($logoWidht + 10) * -1;
+            }
+            .nav {
+                font-size: 14px;
+                display: inline-block;
+                vertical-align: middle;
+                text-align: right;
+                .toggleMenu {  
+                    display: inline-block;
+                    padding: 0 0 0 10px;
+                }
+                nav {
+                    ul {
+                        background-color: #f2f2f2;
+                        display: none;
+                        width: 100%;
+                        position: absolute;
+                        top: 108px;
+                        left: 0;
+                        text-align: center;
+                        li {
+                            display: block;
+                            padding: 0;
+                            a {
+                                display: block;
+                                padding: 10px 40px;
+                                color: $mainColor2;
+                                border: none !important;
+                                position: relative;
+                                i {
+                                    display: block;
+                                }
+                            }
+                            .dropdown {
+                                left: 0 !important;
+                                margin: 0 !important;
+                                position: static;
+                                width: 100%;
+                                border-top: none;
+                                display: none;
+                                opacity: 1;
+                                ul {
+                                    display: block;
+                                    position: static;
+                                    box-shadow: none;
+                                    li {
+                                        border: none;
+                                        a {
+                                            border: none;
+                                            text-align: center;
+                                            padding: 10px 40px;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}
+@media screen and (max-width: 767px) {
+    body {
+        /* Footer */
+        footer {
+            $padding: 30px;
+            .footer {
+                text-align: center;
+                .copy {
+                    float: none;
+                }
+                nav { 
+                    float: none; 
+                    ul {
+                        padding: $padding / 2 0;
+                        li {
+                            display: block;
+                            padding: $padding / 2 0;  
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 
+@media screen and (max-width: 479px) {
+    $logoWidht: 220px;
+    body {
+        .header {
+            .logo-nav-wrap {
+                padding-left: $logoWidht + 10;
+            }
+            .logo {
+                width: $logoWidht;
+                margin: 0 0 0 ($logoWidht + 10) * -1;
+            }
+        } 
+    }
+}
